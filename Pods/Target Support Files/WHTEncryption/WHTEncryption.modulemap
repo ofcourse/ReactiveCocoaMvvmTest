@@ -1,0 +1,6 @@
+framework module WHTEncryption {
+  umbrella header "WHTEncryption-umbrella.h"
+
+  export *
+  module * { export * }
+}

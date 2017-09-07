@@ -2,11 +2,14 @@
 //  ReactiveCocoaMvvmTestTests.m
 //  ReactiveCocoaMvvmTestTests
 //
-//  Created by ios6 on 2017/8/11.
+//  Created by hsg on 2017/8/16.
 //  Copyright © 2017年 ios6. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+//#import <WHTEncryption/WHTEncryption.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 
 @interface ReactiveCocoaMvvmTestTests : XCTestCase
 

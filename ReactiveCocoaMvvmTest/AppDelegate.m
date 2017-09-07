@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <WHTEncryption/WHTEncryption.h>
+#import "WHTAFNetWorkingHelpers.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    NSString *originText=@"abc";
+//    //base64编码
+//    NSString *afteBase64String=[WHTBase64 encodeWithString:originText];
+    
+//    [WHTAFNetWorkingHelpers GET:@"http://www.liebiao.com" success:^(id responseObject) {
+//        NSLog(@"responseObject %@",responseObject);
+//    } failure:^(NSError *error) {
+//        NSLog(@"responseObject %@",error);
+//    }];
+    
+    //NSLog(@"afteBase64String %@",afteBase64String);
+    
+//#ifdef DEBUG
+//   NSLog(@"DEBUG");
+//#elif BETA
+//    NSLog(@"BETA");
+//#elif TESTDEV
+//    NSLog(@"TESTDEV");
+//#else RELEASE
+//    NSLog(@"RELEASE");
+//#endif
+    
     return YES;
 }
 
