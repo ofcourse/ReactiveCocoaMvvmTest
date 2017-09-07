@@ -1,3 +1,3 @@
 # ReactiveCocoaMvvmTest
 
-User Login for ReactiveCocoa Mvvm 
+User Login demo for ReactiveCocoa Mvvm 
