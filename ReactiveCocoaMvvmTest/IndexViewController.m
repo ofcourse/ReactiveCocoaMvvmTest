@@ -16,11 +16,24 @@
 - (IBAction)go:(id)sender {
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TSID"];
     [self.navigationController pushViewController:vc animated:NO];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // UIView的alpha、hidden和opaque属性之间的关系和区别 http://blog.csdn.net/wzzvictory/article/details/10076323
+    //self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
+    //方式1
+    //self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    //只有在右滑默认手势返回有效的情况下，下面handleGesture才能生效 UIGestureRecognizer
+    [self.navigationController.interactivePopGestureRecognizer addTarget:self action:@selector(handleGesture:)];
+    
+    NSLog(@"self.goBack.titleLabel.text %@",self.goBack.titleLabel.text);
+}
+
+
+- (void)handleGesture:(UIGestureRecognizer *)gesture {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UserViewModel.h"
+#import "BaseViewController.h"
 
-@interface IndexViewController : UIViewController
+@interface IndexViewController : BaseViewController
 
 @property (strong,nonatomic) UserViewModel *userViewModel;
 

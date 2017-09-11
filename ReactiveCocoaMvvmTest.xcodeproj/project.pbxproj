@@ -23,6 +23,7 @@
 		5D72151D1F44204D002C6412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D72151C1F44204D002C6412 /* Foundation.framework */; };
 		5D7215811F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72157E1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m */; };
 		5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7215801F46D8DA002C6412 /* WHTRequest.m */; };
+		5DEEC7471F665800001CB00E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEC7461F665800001CB00E /* BaseViewController.m */; };
 		FAA5DCE502E3B700EE9F7883 /* Pods_ReactiveCocoaMvvmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C524C585AA62B9CE7D644C8 /* Pods_ReactiveCocoaMvvmTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		5D72157E1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTAFNetWorkingHelpers.m; sourceTree = "<group>"; };
 		5D72157F1F46D8DA002C6412 /* WHTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTRequest.h; sourceTree = "<group>"; };
 		5D7215801F46D8DA002C6412 /* WHTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTRequest.m; sourceTree = "<group>"; };
+		5DEEC7451F665800001CB00E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5DEEC7461F665800001CB00E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		63B6A4FDB7F45762F2642F53 /* Pods-ReactiveCocoaMvvmTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaMvvmTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaMvvmTest/Pods-ReactiveCocoaMvvmTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6C524C585AA62B9CE7D644C8 /* Pods_ReactiveCocoaMvvmTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaMvvmTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC17B0B39B312D2CE8E8220 /* Pods-ReactiveCocoaMvvmTest.testdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaMvvmTest.testdev.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaMvvmTest/Pods-ReactiveCocoaMvvmTest.testdev.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				0C196F0F1F3D4C2A007DD8CA /* LoginViewController.m */,
 				0C49D9FC1F3DAFDA00DA0BCA /* IndexViewController.h */,
 				0C49D9FD1F3DAFDA00DA0BCA /* IndexViewController.m */,
+				5DEEC7451F665800001CB00E /* BaseViewController.h */,
+				5DEEC7461F665800001CB00E /* BaseViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C196F101F3D4C2A007DD8CA /* LoginViewController.m in Sources */,
+				5DEEC7471F665800001CB00E /* BaseViewController.m in Sources */,
 				0C196F0D1F3D4C2A007DD8CA /* AppDelegate.m in Sources */,
 				0C196F421F3D5640007DD8CA /* User.m in Sources */,
 				5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */,

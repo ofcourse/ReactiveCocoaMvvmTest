@@ -69,6 +69,7 @@
      }];
     //https://tech.meituan.com/ReactiveCocoaSignalFlow.html
     //https://spin.atomicobject.com/2015/05/04/bi-directional-data-bindings-reactivecocoa/
+    //https://tech.meituan.com/RACSignalSubscription.html
     RACChannelTerminal *ct1 = self.txtPassword.rac_newTextChannel;
     
     [ct1 subscribeNext:^(id x) {
@@ -83,6 +84,13 @@
     }];
     
     [RACObserve(self.user, name) subscribe:ct2];
+    
+    RACSignal *rtnSignal  = [RACSignal return:@"1"];
+    [rtnSignal subscribeNext:^(id x) {
+        NSLog(@"return %@",x);
+    }];
+    
+    //NSLog(@"%@",self.navigationController.interactivePopGestureRecognizer.delegate)
 }
 - (void)bindViewModel {
     
