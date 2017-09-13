@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // UIView的alpha、hidden和opaque属性之间的关系和区别 http://blog.csdn.net/wzzvictory/article/details/10076323
-    //self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
+    //self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:1];  灰度 从黑0到白1，透时度：0完全透明，1完全不透明
+    //[UIColor colorWithWhite:0 alpha:0.65];
     //方式1
     //self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     //只有在右滑默认手势返回有效的情况下，下面handleGesture才能生效 UIGestureRecognizer
