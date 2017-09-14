@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <WHTEncryption/WHTEncryption.h>
 #import "WHTAFNetWorkingHelpers.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //iOS 8 自适应 Cell http://www.cocoachina.com/ios/20141218/10687.html
+    
     // Override point for customization after application launch.
     
 //    NSString *originText=@"abc";
@@ -41,11 +44,73 @@
 //#else RELEASE
 //    NSLog(@"RELEASE");
 //#endif
-    
+    [self testJs];
     
     return YES;
 }
 
+- (void)testJs {
+    JSContext *jsContext  = [JSContext new];
+    //oc调用js
+    //定义一个js并执行函数
+    JSValue *value = [jsContext evaluateScript:@"function hi(){ return 'hi' }; hi()"];
+    NSLog(@"value %@",value);
+    
+    //执行一个闭包js
+    JSValue *exeFunction2 = [jsContext evaluateScript:@"(function(){ return 'hi' })()"];
+    NSLog(@"exeFunction2  %@",exeFunction2);
+    
+    //注册一个函数
+    [jsContext evaluateScript:@"var hello = function(){ return 'hello' }"];
+    //调用
+    JSValue *value1 = [jsContext evaluateScript:@"hello()"];
+    NSLog(@"value1  %@",value1);
+    
+    //注册一个匿名函数
+    JSValue *jsFunction = [jsContext evaluateScript:@" (function(){ return 'hello objc' })"];
+    //jsvalue 如果返回的是一个函数类型，这可以使用 ` jsvalue callWithArguments `方法进行js函数调用
+    JSValue *value2 = [jsFunction callWithArguments:nil];
+    NSLog(@"value2  %@",value2);
+    
+    //调用js全局属性
+    [jsContext evaluateScript:@"var stringArray = ['first', 'second', 'third']"];
+    NSLog(@"value[0] %@",[jsContext objectForKeyedSubscript:@"stringArray"][0]);
+    //context.evaluateScript("var stringArray = ['first', 'second', 'third']")
+    //http://www.cnblogs.com/lixiangnotes/p/5307093.html
+    [jsContext evaluateScript:@"var result = function(value) {return value * 3}"];
+    JSValue *vF= [jsContext objectForKeyedSubscript:@"result"];
+    JSValue *result = [vF callWithArguments:@[@"10"]];
+    NSLog(@"result %@",result);
+
+    //js调用native
+    //js调用native代码之前需要native先注册接口，使用jsContext[“方法名”]就可以注册，后面是一个闭包，闭包可以定义函数参数，也可以使用 [JSContext currentArguments] 方法获取到所有函数调用的参数
+    //注册一个objc方法给js调用
+    jsContext[@"log"] = ^(NSString *msg){
+        NSLog(@"js:msg:%@",msg);
+    };
+    //另一种方式，利用currentArguments获取参数
+//    jsContext[@"log"] = ^() {
+//        NSArray *args = [JSContext currentArguments];
+//        for (id obj in args) { NSLog(@"%@",obj); }
+//    };
+    [jsContext evaluateScript:@"log('hello,i am js side')"];
+    
+    //处理js 异常信息
+    [jsContext setExceptionHandler:^(JSContext *con, JSValue *exception){
+        NSLog(@"%@", exception);
+        //con.exception = exception;
+    }];
+    [jsContext evaluateScript:@"function multiply(value1, value2) { return value1 * value2"];
+    
+//    JavaScriptCore和UIWebView的结合使用
+//    
+//    上面的代码都是基于JSContext的，如果声明了一个UIWebView，也可以使用UIWebView获取到JSContext对象，就可以使用JavaScriptCore的Api了，在UIWebView中获取JSContext的方法是：
+//    
+//    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//    不过遗憾的是WKWebView目前我还没有找到获取JSContext的方法，如果有知道的朋友也希望能联系我
+    //https://www.bignerdranch.com/blog/javascriptcore-example/
+    //http://liuyanwei.jumppo.com/2016/04/03/iOS-JavaScriptCore.html
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
