@@ -110,6 +110,7 @@
 //    不过遗憾的是WKWebView目前我还没有找到获取JSContext的方法，如果有知道的朋友也希望能联系我
     //https://www.bignerdranch.com/blog/javascriptcore-example/
     //http://liuyanwei.jumppo.com/2016/04/03/iOS-JavaScriptCore.html
+    //Learn Version Control with Git A step-by-step course for the complete beginner https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/ssh-public-keys
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

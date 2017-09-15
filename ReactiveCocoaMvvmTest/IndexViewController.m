@@ -7,8 +7,18 @@
 //
 
 #import "IndexViewController.h"
+#import "Children.h"
+#import "Person.h"
 
+static void *someContext = &someContext;
 @interface IndexViewController ()
+
+@property (nonatomic, strong) Children *child1;
+
+@property (nonatomic, strong) Children *child2;
+
+@property (nonatomic, strong) Children *child3;
+@property (strong,nonatomic) Person *person;
 
 @end
 
@@ -30,8 +40,40 @@
     [self.navigationController.interactivePopGestureRecognizer addTarget:self action:@selector(handleGesture:)];
     
     NSLog(@"self.goBack.titleLabel.text %@",self.goBack.titleLabel.text);
+    [self testKVO];
 }
 
+
+- (void)testKVO {
+    /*
+    self.child1 = [[Children alloc] init];
+    self.child1.name = @"George";
+    self.child1.age = 15;
+    
+    [self.child1 addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:someContext];
+    self.child1.name = @"abc";
+    
+    [self.child1 addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    [self.child1 setValue:[NSNumber numberWithInteger:20] forKey:@"age"];
+    
+    //    [self.child1 willChangeValueForKey:@"name"];
+    //    self.child1.name = @"Michael";
+    //    [self.child1 didChangeValueForKey:@"name"];
+    
+    //array can work
+    [self.child1 addObserver:self forKeyPath:@"cousins.array" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    [self.child1 addObserver:self forKeyPath:@"mArray" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    [self.child1.mArray addObject:@(1)];//array not working
+     */
+    
+    self.person = [Person new];
+    [self.person addObserver:self forKeyPath:@"fullName" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    self.person.firstName = @"g";
+    self.person.lastName = @"2";
+    self.person.fullName = @"2";
+}
 
 - (void)handleGesture:(UIGestureRecognizer *)gesture {
     [self.navigationController popViewControllerAnimated:YES];
@@ -42,14 +84,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    //if(someContext == context) {
+    if ([keyPath isEqualToString:@"name"]) {
+        NSLog(@"The name of the child was changed.");
+        NSLog(@"%@", change);
+    }
+    
+    if ([keyPath isEqualToString:@"age"]) {
+        NSLog(@"The age of the child was changed.");
+        NSLog(@"%@", change);
+    }
+    if ([keyPath isEqualToString:@"cousins.array"]) {
+        NSLog(@"cousins.array %@", change);
+    }
+    if ([keyPath isEqualToString:@"mArray"]) {
+        NSLog(@"mArray %@", change);
+    }
+    if ([keyPath isEqualToString:@"fullName"]) {
+        NSLog(@"fullName %@", change);
+    }
+    //}
 }
-*/
+
 
 @end
