@@ -90,6 +90,11 @@
         NSLog(@"return %@",x);
     }];
     
+    NSLog(@"keyWindow --------> %@",[UIApplication sharedApplication].keyWindow.rootViewController);
+    NSLog(@"delegate.window --> %@",[UIApplication sharedApplication].delegate.window.rootViewController);
+    NSLog(@"self.view.window -> %@",self.view.window.rootViewController);
+
+    
     //NSLog(@"%@",self.navigationController.interactivePopGestureRecognizer.delegate)
 }
 - (void)bindViewModel {
@@ -101,4 +106,25 @@
     }
     return false;
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    NSLog(@"keyWindow --------> %@",[UIApplication sharedApplication].keyWindow.rootViewController);
+//    NSLog(@"delegate.window --> %@",[UIApplication sharedApplication].delegate.window.rootViewController);
+//    NSLog(@"self.view.window -> %@",self.view.window.rootViewController);
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil];
+//    [alert show];
+//    NSLog(@"keyWindow --------> %@",[UIApplication sharedApplication].keyWindow.rootViewController);
+//    NSLog(@"delegate.window --> %@",[UIApplication sharedApplication].delegate.window.rootViewController);
+//    NSLog(@"self.view.window -> %@",self.view.window.rootViewController);
+//    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 400)];
+//    [view setBackgroundColor:[UIColor redColor]];
+//    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:view];
+//}
+
 @end

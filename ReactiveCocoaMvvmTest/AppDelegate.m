@@ -45,7 +45,8 @@
 //    NSLog(@"RELEASE");
 //#endif
     [self testJs];
-    
+    //http://nshipster.com/ibinspectable-ibdesignable/
+    //https://www.raywenderlich.com/153084/use-git-source-control-xcode-9
     return YES;
 }
 
