@@ -12,11 +12,23 @@
 @implementation WHTAFNetWorkingHelpers
 
 #pragma mark -get
+// [AFHTTPSessionManager manager] 内存泄露,用单例解决
+//http://www.cnblogs.com/Jenaral/p/6145796.html
+//http://blog.csdn.net/wangkexu1986/article/details/51718707
 
-+ (NSURLSessionDataTask *)GET:(NSString *)url timeoutInterval:(NSTimeInterval)timeoutInterval success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure
++ (AFHTTPSessionManager *)shareManager {
+    static dispatch_once_t onceToken;
+    static AFHTTPSessionManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+        manager = [AFHTTPSessionManager manager];
+    });
+    return manager;
+}
+
++ (NSURLSessionDataTask *)GET:(NSString *)url timeoutInterval:(NSTimeInterval)timeoutInterval success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock)failure
 {
     NSParameterAssert(url != nil);
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [self shareManager];
     manager.requestSerializer=[AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setTimeoutInterval:timeoutInterval];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -35,12 +47,12 @@
     }];
 }
 
-+ (NSURLSessionDataTask *)GET:(NSString *)url success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure
++ (NSURLSessionDataTask *)GET:(NSString *)url success:(WHTSuccessResponseBlock)success failure:(WHTFailureResponseBlock)failure
 {
     return [self GET:url timeoutInterval:[[WHTRequest new].timeoutInterval doubleValue] success:success failure:failure ];
 }
 
-+ (NSURLSessionDataTask *)GETWithRequest:(WHTRequest *)request success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure
++ (NSURLSessionDataTask *)GETWithRequest:(WHTRequest *)request success:(WHTSuccessResponseBlock)success failure:(WHTFailureResponseBlock)failure
 {
     return [self GET:request.url timeoutInterval:[request.timeoutInterval doubleValue]  success:success failure:failure ];
 }
@@ -57,7 +69,7 @@
     NSParameterAssert(url != nil);
     NSParameterAssert(content != nil);
 
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [self shareManager];
     manager.requestSerializer=[AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setTimeoutInterval:timeout];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -76,7 +88,7 @@
     }];
 }
 
-+ (NSURLSessionDataTask *)POST:(WHTRequest *)request success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure
++ (NSURLSessionDataTask *)POST:(WHTRequest *)request success:(WHTSuccessResponseBlock)success failure:(WHTFailureResponseBlock) failure
 {
    return [self POST:request.url content:request.contents  timeoutInterval:[request.timeoutInterval doubleValue] success:success failure:failure ];
 }

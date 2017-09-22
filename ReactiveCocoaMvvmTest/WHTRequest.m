@@ -14,7 +14,7 @@
 {
     if(!_timeoutInterval)
     {
-        _timeoutInterval=@(15.0);
+        _timeoutInterval = @(10.0);
     }
     return _timeoutInterval;
 }
@@ -23,7 +23,7 @@
 {
     if(!_requestFailureRemind)
     {
-        _requestFailureRemind=@"网络或服务异常,请重试";
+        _requestFailureRemind = @"网络或服务异常,请重试";
     }
     return _requestFailureRemind;
 }

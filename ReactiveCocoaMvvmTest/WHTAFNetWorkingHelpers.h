@@ -19,7 +19,7 @@ typedef void(^WHTFailureResponseBlock)(NSError *error);
 #pragma mark - get
 
 /**
- *  default timeout 15s
+ *  default timeout 10s
  *
  *  @param url          url
  *  @param success successblock with responseObject
@@ -27,9 +27,9 @@ typedef void(^WHTFailureResponseBlock)(NSError *error);
  */
 + (NSURLSessionDataTask *)GET:(NSString *)url success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure;
 
-+ (NSURLSessionDataTask *)GET:(NSString *)url timeoutInterval:(NSTimeInterval)timeoutInterval success:(WHTSuccessResponseBlock) successBlock failure:(WHTFailureResponseBlock) failureBlock ;
++ (NSURLSessionDataTask *)GET:(NSString *)url timeoutInterval:(NSTimeInterval)timeoutInterval success:(WHTSuccessResponseBlock) successBlock failure:(WHTFailureResponseBlock)failureBlock ;
 
-+ (NSURLSessionDataTask *)GETWithRequest:(WHTRequest *)request success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failureBlock;
++ (NSURLSessionDataTask *)GETWithRequest:(WHTRequest *)request success:(WHTSuccessResponseBlock)success failure:(WHTFailureResponseBlock)failureBlock;
 
 #pragma mark - post
 
@@ -43,6 +43,6 @@ typedef void(^WHTFailureResponseBlock)(NSError *error);
  *  @param success successBlock
  *  @param failure failureBlock
  */
-+ (NSURLSessionDataTask *)POST:(WHTRequest *)request success:(WHTSuccessResponseBlock) success failure:(WHTFailureResponseBlock) failure;
++ (NSURLSessionDataTask *)POST:(WHTRequest *)request success:(WHTSuccessResponseBlock)success failure:(WHTFailureResponseBlock) failure;
 
 @end

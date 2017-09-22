@@ -94,7 +94,13 @@
     NSLog(@"delegate.window --> %@",[UIApplication sharedApplication].delegate.window.rootViewController);
     NSLog(@"self.view.window -> %@",self.view.window.rootViewController);
 
-    
+    [[[self rac_signalForSelector:@selector(viewWillAppear:)]
+     flattenMap:^RACStream *(id value) {
+         return  [self.user login];
+     }]
+     subscribeNext:^(id x) {
+         NSLog(@"%@",x);
+     }];
     //NSLog(@"%@",self.navigationController.interactivePopGestureRecognizer.delegate)
 }
 - (void)bindViewModel {

@@ -7,16 +7,19 @@
 //
 
 #import "User.h"
+#import "WHTAFNetWorkingHelpers.h"
 
 @implementation User
 
 - (RACSignal *)login {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [WHTAFNetWorkingHelpers GET:@"http://www.liebiao.com/" success:^(id responseObject) {
             [subscriber sendNext:@"good"];
             [subscriber sendCompleted];
-        });
-       
+        } failure:^(NSError *error) {
+            [subscriber sendNext:@"bad"];
+            [subscriber sendCompleted];
+        }];
         return nil;
     }];
 }
