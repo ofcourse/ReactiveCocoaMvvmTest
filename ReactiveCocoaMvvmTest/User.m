@@ -7,13 +7,13 @@
 //
 
 #import "User.h"
-#import "WHTAFNetWorkingHelpers.h"
+#import "WHTNetWorkingHelpers.h"
 
 @implementation User
 
 - (RACSignal *)login {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [WHTAFNetWorkingHelpers GET:@"http://www.liebiao.com/" success:^(id responseObject) {
+        [WHTNetWorkingHelpers GET:@"http://www.liebiao.com/" success:^(id responseObject) {
             [subscriber sendNext:@"good"];
             [subscriber sendCompleted];
         } failure:^(NSError *error) {

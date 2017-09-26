@@ -2,7 +2,7 @@
 //  WHTRequest.m
 //  Pods
 //
-//  Created by hsg on 2017/8/18.
+//  Created by hsg on 2017/9/20.
 //
 //
 
@@ -17,15 +17,6 @@
         _timeoutInterval = @(10.0);
     }
     return _timeoutInterval;
-}
-
-- (NSString *)requestFailureRemind
-{
-    if(!_requestFailureRemind)
-    {
-        _requestFailureRemind = @"网络或服务异常,请重试";
-    }
-    return _requestFailureRemind;
 }
 
 @end

@@ -17,11 +17,14 @@
 		0C49D9FB1F3D7CD100DA0BCA /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C49D9FA1F3D7CD100DA0BCA /* UserViewModel.m */; };
 		0C49D9FE1F3DAFDA00DA0BCA /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C49D9FD1F3DAFDA00DA0BCA /* IndexViewController.m */; };
 		0C5352C61F42950E0053B8E0 /* index.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C5352C41F42950E0053B8E0 /* index.storyboard */; };
+		5D44D1AB1F7A4D9F00688C00 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44D1A51F7A4CB600688C00 /* CarModel.m */; };
+		5D44D1AC1F7A4DA700688C00 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44D1A71F7A4CB600688C00 /* PersonModel.m */; };
+		5D44D1AD1F7A4DAC00688C00 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44D1A81F7A4CB700688C00 /* Son.m */; };
 		5D72150B1F44114E002C6412 /* ReactiveCocoaMvvmTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72150A1F44114E002C6412 /* ReactiveCocoaMvvmTestTests.m */; };
 		5D7215151F441FEA002C6412 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7215141F441FE9002C6412 /* XCTest.framework */; };
 		5D72151B1F442047002C6412 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D72151A1F442047002C6412 /* UIKit.framework */; };
 		5D72151D1F44204D002C6412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D72151C1F44204D002C6412 /* Foundation.framework */; };
-		5D7215811F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72157E1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m */; };
+		5D7215811F46D8DA002C6412 /* WHTNetWorkingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72157E1F46D8DA002C6412 /* WHTNetWorkingHelpers.m */; };
 		5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7215801F46D8DA002C6412 /* WHTRequest.m */; };
 		5DDB7BA61F67EA4100A104F1 /* MiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB7BA51F67EA4100A104F1 /* MiddleViewController.m */; };
 		5DDB7BAC1F68C9D300A104F1 /* CTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB7BAB1F68C9D300A104F1 /* CTabBarController.m */; };
@@ -66,6 +69,12 @@
 		0C5352C51F42950E0053B8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/index.storyboard; sourceTree = "<group>"; };
 		372377F1F779262C53F2103B /* Pods-ReactiveCocoaMvvmTest.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaMvvmTest.beta.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaMvvmTest/Pods-ReactiveCocoaMvvmTest.beta.xcconfig"; sourceTree = "<group>"; };
 		465E809317C7A2DE55C06A22 /* Pods-ReactiveCocoaMvvmTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaMvvmTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaMvvmTest/Pods-ReactiveCocoaMvvmTest.release.xcconfig"; sourceTree = "<group>"; };
+		5D44D1A51F7A4CB600688C00 /* CarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		5D44D1A61F7A4CB600688C00 /* CarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		5D44D1A71F7A4CB600688C00 /* PersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		5D44D1A81F7A4CB700688C00 /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
+		5D44D1A91F7A4CB700688C00 /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		5D44D1AA1F7A4CB700688C00 /* PersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
 		5D7215001F440DEA002C6412 /* libPods-ReactiveCocoaMvvmTest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ReactiveCocoaMvvmTest.a"; path = "../../../../Library/Developer/Xcode/DerivedData/ReactiveCocoaMvvmTest-bacgccmztbrplrgrtiaymtakouyz/Build/Products/Debug-iphonesimulator/libPods-ReactiveCocoaMvvmTest.a"; sourceTree = "<group>"; };
 		5D7215021F44110C002C6412 /* WHTEncryption.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WHTEncryption.framework; path = "Pods/../build/Debug-iphoneos/WHTEncryption/WHTEncryption.framework"; sourceTree = "<group>"; };
 		5D7215081F44114E002C6412 /* ReactiveCocoaMvvmTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCocoaMvvmTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +86,8 @@
 		5D7215181F442007002C6412 /* WHTEncryption.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WHTEncryption.framework; path = "Pods/../build/Debug-iphoneos/WHTEncryption/WHTEncryption.framework"; sourceTree = "<group>"; };
 		5D72151A1F442047002C6412 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D72151C1F44204D002C6412 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		5D72157D1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTAFNetWorkingHelpers.h; sourceTree = "<group>"; };
-		5D72157E1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTAFNetWorkingHelpers.m; sourceTree = "<group>"; };
+		5D72157D1F46D8DA002C6412 /* WHTNetWorkingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTNetWorkingHelpers.h; sourceTree = "<group>"; };
+		5D72157E1F46D8DA002C6412 /* WHTNetWorkingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTNetWorkingHelpers.m; sourceTree = "<group>"; };
 		5D72157F1F46D8DA002C6412 /* WHTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTRequest.h; sourceTree = "<group>"; };
 		5D7215801F46D8DA002C6412 /* WHTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTRequest.m; sourceTree = "<group>"; };
 		5DDB7BA41F67EA4100A104F1 /* MiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleViewController.h; sourceTree = "<group>"; };
@@ -143,8 +152,8 @@
 		0C196F071F3D4C2A007DD8CA /* ReactiveCocoaMvvmTest */ = {
 			isa = PBXGroup;
 			children = (
-				5D72157D1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.h */,
-				5D72157E1F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m */,
+				5D72157D1F46D8DA002C6412 /* WHTNetWorkingHelpers.h */,
+				5D72157E1F46D8DA002C6412 /* WHTNetWorkingHelpers.m */,
 				5D72157F1F46D8DA002C6412 /* WHTRequest.h */,
 				5D7215801F46D8DA002C6412 /* WHTRequest.m */,
 				0C196F3F1F3D5162007DD8CA /* Controller */,
@@ -200,6 +209,7 @@
 		0C196F3D1F3D513F007DD8CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D44D1A41F7A4CAA00688C00 /* Mantle */,
 				5DDB7BB01F6B993400A104F1 /* Children.h */,
 				5DDB7BB11F6B993400A104F1 /* Children.m */,
 				0C196F401F3D5640007DD8CA /* User.h */,
@@ -245,6 +255,19 @@
 				372377F1F779262C53F2103B /* Pods-ReactiveCocoaMvvmTest.beta.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D44D1A41F7A4CAA00688C00 /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				5D44D1A61F7A4CB600688C00 /* CarModel.h */,
+				5D44D1A51F7A4CB600688C00 /* CarModel.m */,
+				5D44D1AA1F7A4CB700688C00 /* PersonModel.h */,
+				5D44D1A71F7A4CB600688C00 /* PersonModel.m */,
+				5D44D1A91F7A4CB700688C00 /* Son.h */,
+				5D44D1A81F7A4CB700688C00 /* Son.m */,
+			);
+			name = Mantle;
 			sourceTree = "<group>";
 		};
 		5D7215091F44114E002C6412 /* ReactiveCocoaMvvmTestTests */ = {
@@ -427,6 +450,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D44D1AD1F7A4DAC00688C00 /* Son.m in Sources */,
+				5D44D1AC1F7A4DA700688C00 /* PersonModel.m in Sources */,
+				5D44D1AB1F7A4D9F00688C00 /* CarModel.m in Sources */,
 				0C196F101F3D4C2A007DD8CA /* LoginViewController.m in Sources */,
 				5DEEC7471F665800001CB00E /* BaseViewController.m in Sources */,
 				0C196F0D1F3D4C2A007DD8CA /* AppDelegate.m in Sources */,
@@ -434,7 +460,7 @@
 				5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */,
 				0C49D9FB1F3D7CD100DA0BCA /* UserViewModel.m in Sources */,
 				5DDB7BAF1F6B982300A104F1 /* Person.m in Sources */,
-				5D7215811F46D8DA002C6412 /* WHTAFNetWorkingHelpers.m in Sources */,
+				5D7215811F46D8DA002C6412 /* WHTNetWorkingHelpers.m in Sources */,
 				0C196F0A1F3D4C2A007DD8CA /* main.m in Sources */,
 				0C49D9FE1F3DAFDA00DA0BCA /* IndexViewController.m in Sources */,
 				5DDB7BA61F67EA4100A104F1 /* MiddleViewController.m in Sources */,

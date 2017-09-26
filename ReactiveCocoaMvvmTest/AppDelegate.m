@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import <WHTEncryption/WHTEncryption.h>
-#import "WHTAFNetWorkingHelpers.h"
+#import "WHTNetWorkingHelpers.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import <Mantle/Mantle.h>
+#import "PersonModel.h"
 
 @interface AppDelegate ()
 
@@ -27,12 +29,6 @@
 //    //base64编码
 //    NSString *afteBase64String=[WHTBase64 encodeWithString:originText];
     
-//    [WHTAFNetWorkingHelpers GET:@"http://www.liebiao.com" success:^(id responseObject) {
-//        NSLog(@"responseObject %@",responseObject);
-//    } failure:^(NSError *error) {
-//        NSLog(@"responseObject %@",error);
-//    }];
-    
     //NSLog(@"afteBase64String %@",afteBase64String);
     
 //#ifdef DEBUG
@@ -44,11 +40,39 @@
 //#else RELEASE
 //    NSLog(@"RELEASE");
 //#endif
-    [self testJs];
+    //[self testJs];
+    [self testNetWorking];
+    [self testMantle];
     //http://nshipster.com/ibinspectable-ibdesignable/
     //https://www.raywenderlich.com/153084/use-git-source-control-xcode-9
     return YES;
     //xcode9 new feature  https://my.oschina.net/Misayalvyuan/blog/918381
+}
+
+- (void)testMantle {
+    //https://stackoverflow.com/questions/13883693/how-to-specify-child-objects-type-in-an-nsarray-with-mantle
+    NSDictionary *JSONDictionary = @{
+                                     @"name": @"Bob",
+                                     @"son": @{@"son":@"comeSon",@"game":@"double kill"},
+                                     @"cars": @[
+                                             @{ @"make": @"ford", @"year":@(1972) },
+                                             @{ @"make": @"mazda",@"year": @(2000) }
+                                             ],
+                                     };//dict inclue Model & Array<Model>
+    
+    PersonModel *pm = [MTLJSONAdapter modelOfClass:PersonModel.class fromJSONDictionary:JSONDictionary error:nil];
+    NSLog(@"pm %@ cars:%@ son:%@",pm,pm.cars,pm.son);
+    //[MTLJSONAdapter modelOfClass:modleClass fromJSONDictionary:content error:nil] parse  Model
+    //[MTLJSONAdapter modelsOfClass:modleClass fromJSONArray:content error:nil]; parse Array<Model>
+}
+
+- (void)testNetWorking {
+        [WHTNetWorkingHelpers GET:@"http://www.liebiao.com" success:^(id responseObject) {
+             NSLog(@"success %@",[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+        } failure:^(NSError *error) {
+            NSLog(@"responseObject %@",error);
+        }];
+
 }
 
 - (void)testJs {

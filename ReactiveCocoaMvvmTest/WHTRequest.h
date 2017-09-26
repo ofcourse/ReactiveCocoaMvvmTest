@@ -2,7 +2,7 @@
 //  WHTRequest.h
 //  Pods
 //
-//  Created by hsg on 2017/8/18.
+//  Created by hsg on 2017/9/20.
 //
 //
 
@@ -21,11 +21,8 @@
  */
 @property (strong,nonatomic) NSNumber *timeoutInterval;
 
-//网络连接失败,请重试
-@property (copy,nonatomic) NSString *requestFailureRemind;
 
 - (NSNumber *)timeoutInterval;
 
-- (NSString *)requestFailureRemind;
 
 @end
