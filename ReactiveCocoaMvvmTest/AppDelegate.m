@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //iOS 8 自适应 Cell http://www.cocoachina.com/ios/20141218/10687.html
-    
+    //ios self-sizing  http://www.thomashanning.com/uitableview-automatic-row-height/ https://www.raywenderlich.com/129059/self-sizing-table-view-cells
     // Override point for customization after application launch.
     
 //    NSString *originText=@"abc";

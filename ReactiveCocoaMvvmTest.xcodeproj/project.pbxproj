@@ -26,6 +26,8 @@
 		5D72151D1F44204D002C6412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D72151C1F44204D002C6412 /* Foundation.framework */; };
 		5D7215811F46D8DA002C6412 /* WHTNetWorkingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72157E1F46D8DA002C6412 /* WHTNetWorkingHelpers.m */; };
 		5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7215801F46D8DA002C6412 /* WHTRequest.m */; };
+		5DB6A3401F7CC26E002948DC /* TestTableviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6A33F1F7CC26E002948DC /* TestTableviewViewController.m */; };
+		5DB6A3431F7CC3DA002948DC /* TestSelfSizeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6A3421F7CC3DA002948DC /* TestSelfSizeTableViewCell.m */; };
 		5DDB7BA61F67EA4100A104F1 /* MiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB7BA51F67EA4100A104F1 /* MiddleViewController.m */; };
 		5DDB7BAC1F68C9D300A104F1 /* CTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB7BAB1F68C9D300A104F1 /* CTabBarController.m */; };
 		5DDB7BAF1F6B982300A104F1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB7BAE1F6B982300A104F1 /* Person.m */; };
@@ -90,6 +92,10 @@
 		5D72157E1F46D8DA002C6412 /* WHTNetWorkingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTNetWorkingHelpers.m; sourceTree = "<group>"; };
 		5D72157F1F46D8DA002C6412 /* WHTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHTRequest.h; sourceTree = "<group>"; };
 		5D7215801F46D8DA002C6412 /* WHTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHTRequest.m; sourceTree = "<group>"; };
+		5DB6A33E1F7CC26E002948DC /* TestTableviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableviewViewController.h; sourceTree = "<group>"; };
+		5DB6A33F1F7CC26E002948DC /* TestTableviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableviewViewController.m; sourceTree = "<group>"; };
+		5DB6A3411F7CC3DA002948DC /* TestSelfSizeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSelfSizeTableViewCell.h; sourceTree = "<group>"; };
+		5DB6A3421F7CC3DA002948DC /* TestSelfSizeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSelfSizeTableViewCell.m; sourceTree = "<group>"; };
 		5DDB7BA41F67EA4100A104F1 /* MiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleViewController.h; sourceTree = "<group>"; };
 		5DDB7BA51F67EA4100A104F1 /* MiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleViewController.m; sourceTree = "<group>"; };
 		5DDB7BAA1F68C9D300A104F1 /* CTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTabBarController.h; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 		0C196F3F1F3D5162007DD8CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5DB6A33D1F7CC241002948DC /* TableViewSelfSizing */,
 				0C196F0E1F3D4C2A007DD8CA /* LoginViewController.h */,
 				0C196F0F1F3D4C2A007DD8CA /* LoginViewController.m */,
 				0C49D9FC1F3DAFDA00DA0BCA /* IndexViewController.h */,
@@ -277,6 +284,17 @@
 				5D72150C1F44114E002C6412 /* Info.plist */,
 			);
 			path = ReactiveCocoaMvvmTestTests;
+			sourceTree = "<group>";
+		};
+		5DB6A33D1F7CC241002948DC /* TableViewSelfSizing */ = {
+			isa = PBXGroup;
+			children = (
+				5DB6A33E1F7CC26E002948DC /* TestTableviewViewController.h */,
+				5DB6A33F1F7CC26E002948DC /* TestTableviewViewController.m */,
+				5DB6A3411F7CC3DA002948DC /* TestSelfSizeTableViewCell.h */,
+				5DB6A3421F7CC3DA002948DC /* TestSelfSizeTableViewCell.m */,
+			);
+			name = TableViewSelfSizing;
 			sourceTree = "<group>";
 		};
 		CC1E1AB6E593D54E47790FF8 /* Frameworks */ = {
@@ -456,10 +474,12 @@
 				0C196F101F3D4C2A007DD8CA /* LoginViewController.m in Sources */,
 				5DEEC7471F665800001CB00E /* BaseViewController.m in Sources */,
 				0C196F0D1F3D4C2A007DD8CA /* AppDelegate.m in Sources */,
+				5DB6A3431F7CC3DA002948DC /* TestSelfSizeTableViewCell.m in Sources */,
 				0C196F421F3D5640007DD8CA /* User.m in Sources */,
 				5D7215821F46D8DA002C6412 /* WHTRequest.m in Sources */,
 				0C49D9FB1F3D7CD100DA0BCA /* UserViewModel.m in Sources */,
 				5DDB7BAF1F6B982300A104F1 /* Person.m in Sources */,
+				5DB6A3401F7CC26E002948DC /* TestTableviewViewController.m in Sources */,
 				5D7215811F46D8DA002C6412 /* WHTNetWorkingHelpers.m in Sources */,
 				0C196F0A1F3D4C2A007DD8CA /* main.m in Sources */,
 				0C49D9FE1F3DAFDA00DA0BCA /* IndexViewController.m in Sources */,
