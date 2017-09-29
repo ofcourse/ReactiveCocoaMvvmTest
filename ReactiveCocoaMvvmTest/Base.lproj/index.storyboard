@@ -276,6 +276,82 @@
             </objects>
             <point key="canvasLocation" x="2234" y="271"/>
         </scene>
+        <!--autolayout-hug-compress-->
+        <scene sceneID="xiM-Lt-7yl">
+            <objects>
+                <viewController id="axk-Kc-Xaf" userLabel="autolayout-hug-compress" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OcZ-v8-dXm"/>
+                        <viewControllerLayoutGuide type="bottom" id="ynt-BI-UFI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a86-El-oF9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content hugging  :don't want to grow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6z-Jo-J9p">
+                                <rect key="frame" x="32" y="58" width="282" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KZR-RC-KXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content compression resistance  :don't want to shrink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-uU-Jbw">
+                                <rect key="frame" x="16" y="133" width="326" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326" id="KT8-WG-8ZB"/>
+                                    <constraint firstAttribute="height" constant="21" id="tI6-i2-B6I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-60-AcC">
+                                <rect key="frame" x="40" y="87" width="104" height="30"/>
+                                <color key="backgroundColor" red="0.68883639240000005" green="0.83883681960000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="higger hugging"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-SF-U8S">
+                                <rect key="frame" x="175" y="87" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="lower hugging"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rub-jB-U26">
+                                <rect key="frame" x="0.0" y="169" width="271" height="30"/>
+                                <color key="backgroundColor" red="0.68883639240000005" green="0.83883681960000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="higger content compression resistance "/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-ef-QFd">
+                                <rect key="frame" x="272" y="169" width="103" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="lower content compression resistance"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S6z-Jo-J9p" firstAttribute="top" secondItem="a86-El-oF9" secondAttribute="top" constant="58" id="137-F8-n3a"/>
+                            <constraint firstItem="Ado-60-AcC" firstAttribute="top" secondItem="S6z-Jo-J9p" secondAttribute="bottom" constant="8" id="3V7-GS-ZYu"/>
+                            <constraint firstItem="Rub-jB-U26" firstAttribute="leading" secondItem="a86-El-oF9" secondAttribute="leading" id="ENW-SF-KdW"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S6z-Jo-J9p" secondAttribute="trailing" constant="20" symbolic="YES" id="Hj2-FG-cZg"/>
+                            <constraint firstItem="cK6-uU-Jbw" firstAttribute="leading" secondItem="a86-El-oF9" secondAttribute="leading" constant="16" id="OHm-5A-Buy"/>
+                            <constraint firstItem="jeX-ef-QFd" firstAttribute="leading" secondItem="Rub-jB-U26" secondAttribute="trailing" constant="1" id="Qto-5X-fdC"/>
+                            <constraint firstItem="Ado-60-AcC" firstAttribute="leading" secondItem="a86-El-oF9" secondAttribute="leading" constant="40" id="Y2y-as-nhu"/>
+                            <constraint firstItem="KKu-SF-U8S" firstAttribute="baseline" secondItem="Ado-60-AcC" secondAttribute="baseline" id="aO0-tR-HvG"/>
+                            <constraint firstItem="KKu-SF-U8S" firstAttribute="leading" secondItem="Ado-60-AcC" secondAttribute="trailing" constant="31" id="anA-ex-ph7"/>
+                            <constraint firstAttribute="trailing" secondItem="jeX-ef-QFd" secondAttribute="trailing" id="byy-5o-Zmh"/>
+                            <constraint firstItem="cK6-uU-Jbw" firstAttribute="top" secondItem="Ado-60-AcC" secondAttribute="bottom" constant="16" id="d6A-Yv-oHb"/>
+                            <constraint firstItem="jeX-ef-QFd" firstAttribute="baseline" secondItem="Rub-jB-U26" secondAttribute="baseline" id="lI0-hf-2DS"/>
+                            <constraint firstAttribute="trailing" secondItem="KKu-SF-U8S" secondAttribute="trailing" id="mvy-xK-TA9"/>
+                            <constraint firstItem="S6z-Jo-J9p" firstAttribute="leading" secondItem="a86-El-oF9" secondAttribute="leading" constant="32" id="pdb-XJ-tyn"/>
+                            <constraint firstItem="Rub-jB-U26" firstAttribute="top" secondItem="cK6-uU-Jbw" secondAttribute="bottom" constant="15" id="xBL-2U-06y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCm-lm-RoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986" y="-48"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3CU-XA-RJs">
             <objects>

@@ -47,6 +47,7 @@
     //https://www.raywenderlich.com/153084/use-git-source-control-xcode-9
     return YES;
     //xcode9 new feature  https://my.oschina.net/Misayalvyuan/blog/918381
+    //https://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority
 }
 
 - (void)testMantle {
