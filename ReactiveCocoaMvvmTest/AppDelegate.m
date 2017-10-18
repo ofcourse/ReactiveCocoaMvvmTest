@@ -48,6 +48,8 @@
     return YES;
     //xcode9 new feature  https://my.oschina.net/Misayalvyuan/blog/918381
     //https://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority
+    
+    //gcd 多线程 http://www.cocoachina.com/ios/20170707/19769.html  iOS多线程全套：线程生命周期，多线程的四种解决方案，线程安全问题，GCD的使用，NSOperation的使用
 }
 
 - (void)testMantle {
