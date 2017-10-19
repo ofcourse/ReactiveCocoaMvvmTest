@@ -102,6 +102,7 @@
          NSLog(@"%@",x);
      }];
     //NSLog(@"%@",self.navigationController.interactivePopGestureRecognizer.delegate)
+    
 }
 - (void)bindViewModel {
     
